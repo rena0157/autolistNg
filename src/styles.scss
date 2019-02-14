@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+/*
+    style.scss
+    By: Adam Renaud
+    Created: 2019-02-13
+*/
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono');
+
+html {
+    font-size: 100%;
+}
+
+body {
+    margin: 0 0 200px 0;
+    font-family: 'Roboto', sans-serif;
+}
