@@ -2,6 +2,6 @@
   This is where the main mesage will go
 </p>
 
-<autolist-textarea></autolist-textarea>
-<app-output-cell></app-output-cell>
-<app-output-cell></app-output-cell>
+<autolist-textarea (inputEvent)="onInput($event)"></autolist-textarea>
+<app-output-cell [value]="totalLength"></app-output-cell>
+<app-output-cell [value]="totalArea"></app-output-cell>

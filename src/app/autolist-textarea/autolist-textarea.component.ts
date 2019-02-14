@@ -1,15 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'autolist-textarea',
-  templateUrl: './autolist-textarea.component.html',
-  styleUrls: ['./autolist-textarea.component.scss']
+    selector: 'autolist-textarea',
+    templateUrl: './autolist-textarea.component.html',
+    styleUrls: ['./autolist-textarea.component.scss']
 })
 export class AutolistTextareaComponent implements OnInit {
 
-  constructor() { }
+    constructor() 
+    {
+    }
 
-  ngOnInit() {
-  }
+    /**
+     * Input Event
+     */
+    @Output() public inputEvent = new EventEmitter();
+
+
+    ngOnInit() {
+    }
+
+    /**
+     * @param text The string from the input area
+     */
+    onInput(text: string)
+    {
+        this.inputEvent.emit(text);
+    }
 
 }
