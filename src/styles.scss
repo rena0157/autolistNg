@@ -12,6 +12,12 @@ html {
 }
 
 body {
+    // General and fonts
     margin: 0 0 200px 0;
     font-family: 'Roboto', sans-serif;
+}
+
+.al-textarea {
+    width: 100%;
+    box-sizing: border-box;
 }
