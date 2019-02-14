@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
+import { AutolistTextareaComponent } from './autolist-textarea/autolist-textarea.component';
+import { OutputCellComponent } from './output-cell/output-cell.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavComponent,
+    AutolistTextareaComponent,
+    OutputCellComponent,
   ],
   imports: [
     BrowserModule,
