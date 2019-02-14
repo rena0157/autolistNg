@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-autolist-textarea',
+  selector: 'autolist-textarea',
   templateUrl: './autolist-textarea.component.html',
   styleUrls: ['./autolist-textarea.component.scss']
 })
