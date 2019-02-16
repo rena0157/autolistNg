@@ -11,7 +11,7 @@ export class AutolistParser
 {
     readonly linesRegex = /[L,l]ength\s+=?\s*(\d+\.?\d*)/g;
 
-    readonly hatchesRegex = new RegExp('');
+    readonly hatchesRegex = /[A]rea\s*(\d+\.?\d*)/g;
 
     readonly textRegex = new RegExp('');
 
