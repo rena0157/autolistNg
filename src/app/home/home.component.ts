@@ -29,10 +29,14 @@ export class HomeComponent implements OnInit {
      */
     public totalLength: string;
 
+    public totalLengthPlaceholder : string = "Total Length";
+
     /**
      * The total area of all the hatches
      */
     public totalArea: string;
+
+    public totalAreaPlaceholder : string = "Total Area";
 
     /**
      * @param text The text that is passed to the event

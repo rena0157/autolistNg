@@ -1,26 +1,26 @@
-/*
-    style.scss
-    By: Adam Renaud
-    Created: 2019-02-13
-*/
+// Styles.scss
+// By Adam Renaud
+// 2019-02-15
 
-
+// Importing Robot Fonts
 @import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono');
 
+// General HTML Styles
 html {
     font-size: 100%;
 }
 
 body {
-    // General and fonts
     margin: 0 0 200px 0;
     font-family: 'Roboto', sans-serif;
 }
 
+// Default class for all autolist text areas
 .al-textarea {
     width: 100%;
     box-sizing: border-box;
     border: 1px solid lightgrey;
     resize: vertical;
     border-radius: 10px;
+    font-family: 'Roboto Mono', monospace;
 }

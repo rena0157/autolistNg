@@ -10,10 +10,13 @@ export class OutputCellComponent implements OnInit {
     constructor() 
     {
         this.value = "";
+        this.placeholder = "";
     }
 
     ngOnInit() {
     }
 
     @Input() public value: string;
+
+    @Input() public placeholder : string;
 }

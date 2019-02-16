@@ -1,0 +1,11 @@
+#home-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    row-gap: 0.5em;
+    column-gap: 0.75em;
+    grid-template-areas: "message message message"
+                         "input input input"
+                         "length area objectBtn"
+                         "table table table";
+}

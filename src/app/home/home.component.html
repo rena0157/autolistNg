@@ -1,7 +1,11 @@
-<p>
-  This is where the main mesage will go
-</p>
-
-<autolist-textarea (inputEvent)="onInput($event)"></autolist-textarea>
-<app-output-cell [value]="totalLength"></app-output-cell>
-<app-output-cell [value]="totalArea"></app-output-cell>
+<div id="home-container">
+  <div style="grid-area: message;">
+    <p>Hello message</p>
+  </div>
+  <autolist-textarea (inputEvent)="onInput($event)" 
+    style="grid-area: input;"></autolist-textarea>
+  <app-output-cell [value]="totalLength" [placeholder]="totalLengthPlaceholder"
+    style="grid-area: length;"></app-output-cell>
+  <app-output-cell [value]="totalArea" [placeholder]="totalAreaPlaceholder"
+    style="grid-area: area;"></app-output-cell>
+</div>

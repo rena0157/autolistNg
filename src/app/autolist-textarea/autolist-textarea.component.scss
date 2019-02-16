@@ -1,6 +1,10 @@
-textarea {
+// autolist text area 
+// By Adam Renaud
+// Created on 2019-02-15
 
+// styles for the autolist text area
+textarea {
     height: 14em;
     padding: 0.1em 1em 0.1em 1em;
-    font-family: 'Roboto Mono', monospace;
+    min-height: 3em;
 }
