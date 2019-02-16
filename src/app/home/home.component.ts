@@ -74,6 +74,7 @@ export class HomeComponent implements OnInit {
     if (areas.length > 0) {
       this.totalArea = `${areas.reduce(this.sumArray).toFixed(3)} m² (${(areas.reduce(this.sumArray)/10000).toFixed(3)} Ha)`;
     }
+    else this.totalArea = "";
   }
 
 }
