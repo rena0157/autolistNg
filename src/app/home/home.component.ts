@@ -15,8 +15,8 @@ export class HomeComponent implements OnInit {
    */
   constructor() {
     this.parser = new AutolistParser();
-    this.totalArea = 0;
-    this.totalLength = 0;
+    this.totalArea = "";
+    this.totalLength = "";
   }
 
   /**
@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
    * The total length of all lines
    * and polylines
    */
-  public totalLength: number;
+  public totalLength: string;
 
   /**
    * The totalLength placeholder text
@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
   /**
    * The total area of all the hatches
    */
-  public totalArea: number;
+  public totalArea: string;
 
   /**
    * The total Area placeholder text
@@ -47,10 +47,33 @@ export class HomeComponent implements OnInit {
   public totalAreaPlaceholder: string = "Total Area";
 
   /**
+   * Function that sums an array
+   * @param a the first number
+   * @param b the second number
+   */
+  public sumArray = (a:number, b:number):number => a + b;
+
+
+  /**
    * @param text The text that is passed to the event
    */
   onInput(text: string) {
+
+    // Get the lines' lengths from the string passed in
     var lines = this.parser.getDoubles(text, this.parser.linesRegex);
+
+    // Get the areas that are passed from the string
+    var areas = this.parser.getDoubles(text, this.parser.hatchesRegex);
+
+    // Set the total length
+    if (lines.length > 0) {
+      this.totalLength = `${lines.reduce(this.sumArray).toFixed(3)} m`;
+    }
+    else this.totalLength = "";
+
+    if (areas.length > 0) {
+      this.totalArea = `${areas.reduce(this.sumArray).toFixed(3)} m² (${(areas.reduce(this.sumArray)/10000).toFixed(3)} Ha)`;
+    }
   }
 
 }
