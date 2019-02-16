@@ -21,12 +21,11 @@ export class AutolistParser
     getDoubles(text:string, re: RegExp) : number[]
     {
         var match:RegExpExecArray;
-        if (re.test(text)) {
-            while(match = re.exec(text) as RegExpExecArray) {
-                console.log(match);
-            }
+        var matches:number[] = new Array<number>();
+        while(match = re.exec(text) as RegExpExecArray) {
+            matches.push(parseFloat(match[1]));
         }
-        return new Array<number>();
+        return matches;
     }
 
     /**
