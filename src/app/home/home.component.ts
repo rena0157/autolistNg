@@ -31,6 +31,9 @@ export class HomeComponent implements OnInit {
      */
     public totalLength: number;
 
+    /**
+     * The totalLength placeholder text
+     */
     public totalLengthPlaceholder: string = "Total Length";
 
     /**
@@ -38,6 +41,9 @@ export class HomeComponent implements OnInit {
      */
     public totalArea: number;
 
+    /**
+     * The total Area placeholder text
+     */
     public totalAreaPlaceholder: string = "Total Area";
 
     /**
