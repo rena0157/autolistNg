@@ -28,7 +28,17 @@ export class AcadObject {
     public Length : number;
 
     /**
-     * The area of the object
+     * The area of the object in meters
      */
-    public Area : number;
+    public AreaM : number;
+
+    /**
+     * The Area of the Object in Hectares
+     */
+    public AreaHa : number;
+
+    /**
+     * The Area of the object in acres
+     */
+    public AreaAc : number;
 }
