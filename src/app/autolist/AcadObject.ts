@@ -14,7 +14,9 @@ export class AcadObject {
      * @param area The length of the object, can be 0
      */
     constructor(Id: string, length: number=0, area: number=0) {
-
+        this.ID = Id;
+        this.Length = length;
+        this.AreaM = area;
     }
 
     /**
@@ -35,10 +37,10 @@ export class AcadObject {
     /**
      * The Area of the Object in Hectares
      */
-    public AreaHa : number;
+    public AreaHa : number = this.AreaM / 10000;
 
     /**
      * The Area of the object in acres
      */
-    public AreaAc : number;
+    public AreaAc : number = this.AreaM * 0.0002471;
 }

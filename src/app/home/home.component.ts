@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AutolistParser } from '../autolist/AutolistParser';
 
 @Component({
     selector: 'app-home',
@@ -7,13 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+    private parser:AutolistParser;
+
     /**
      * The Constructor
      */
     constructor() 
     {
-        this.totalArea = "";
-        this.totalLength = "";
+        this.parser = new AutolistParser();
+        this.totalArea = 0;
+        this.totalLength = 0;
     }
 
     /**
@@ -27,14 +31,14 @@ export class HomeComponent implements OnInit {
      * The total length of all lines
      * and polylines
      */
-    public totalLength: string;
+    public totalLength: number;
 
     public totalLengthPlaceholder : string = "Total Length";
 
     /**
      * The total area of all the hatches
      */
-    public totalArea: string;
+    public totalArea: number;
 
     public totalAreaPlaceholder : string = "Total Area";
 
@@ -42,8 +46,6 @@ export class HomeComponent implements OnInit {
      * @param text The text that is passed to the event
      */
     onInput(text: string) {
-        this.totalLength = text;
-        this.totalArea = text;
     }
 
 }
