@@ -17,6 +17,8 @@ export class AcadObject {
         this.ID = Id;
         this.Length = length;
         this.AreaM = area;
+        this.AreaHa = this.AreaM / 10000;
+        this.AreaAc = this.AreaHa * 2.471;
     }
 
     /**
@@ -37,10 +39,10 @@ export class AcadObject {
     /**
      * The Area of the Object in Hectares
      */
-    public AreaHa : number = this.AreaM / 10000;
+    public AreaHa : number;
 
     /**
      * The Area of the object in acres
      */
-    public AreaAc : number = this.AreaM * 0.0002471;
+    public AreaAc : number;
 }
