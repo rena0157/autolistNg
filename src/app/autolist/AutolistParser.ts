@@ -9,7 +9,7 @@ import { AcadObject } from './AcadObject';
  */
 export class AutolistParser
 {
-    readonly linesRegex = new RegExp('[L,l]ength\s+=?\s*(\d+\.?\d*)', 'g');
+    readonly linesRegex = /[L,l]ength\s+=?\s*(\d+\.?\d*)/g;
 
     readonly hatchesRegex = new RegExp('');
 
@@ -18,8 +18,14 @@ export class AutolistParser
     /**
      * Get the double from the List text
      */
-    getDouble(text:string, re: RegExp) : number[]
+    getDoubles(text:string, re: RegExp) : number[]
     {
+        var match:RegExpExecArray;
+        if (re.test(text)) {
+            while(match = re.exec(text) as RegExpExecArray) {
+                console.log(match);
+            }
+        }
         return new Array<number>();
     }
 

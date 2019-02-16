@@ -8,13 +8,12 @@ import { AutolistParser } from '../autolist/AutolistParser';
 })
 export class HomeComponent implements OnInit {
 
-    private parser:AutolistParser;
+    private parser: AutolistParser;
 
     /**
      * The Constructor
      */
-    constructor() 
-    {
+    constructor() {
         this.parser = new AutolistParser();
         this.totalArea = 0;
         this.totalLength = 0;
@@ -23,8 +22,7 @@ export class HomeComponent implements OnInit {
     /**
      * Main init function
      */
-    ngOnInit() 
-    {
+    ngOnInit() {
     }
 
     /**
@@ -33,19 +31,20 @@ export class HomeComponent implements OnInit {
      */
     public totalLength: number;
 
-    public totalLengthPlaceholder : string = "Total Length";
+    public totalLengthPlaceholder: string = "Total Length";
 
     /**
      * The total area of all the hatches
      */
     public totalArea: number;
 
-    public totalAreaPlaceholder : string = "Total Area";
+    public totalAreaPlaceholder: string = "Total Area";
 
     /**
      * @param text The text that is passed to the event
      */
     onInput(text: string) {
+        var lines = this.parser.getDoubles(text, this.parser.linesRegex);
     }
 
 }
