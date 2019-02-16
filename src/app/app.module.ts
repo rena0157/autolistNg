@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { AutolistTextareaComponent } from './autolist-textarea/autolist-textarea.component';
 import { OutputCellComponent } from './output-cell/output-cell.component';
+import { ObjectTableComponent } from './object-table/object-table.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { OutputCellComponent } from './output-cell/output-cell.component';
     NavComponent,
     AutolistTextareaComponent,
     OutputCellComponent,
+    ObjectTableComponent,
   ],
   imports: [
     BrowserModule,
