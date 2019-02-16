@@ -99,9 +99,7 @@ export class AutolistParser {
         }
 
         if (objectList.length < textObjects.length) {
-            if (currentMatch != null) {
-                objectList.push(new AcadObject(currentText, currentLength, currentArea));
-            }
+            objectList.push(new AcadObject(currentText as string, currentLength, currentArea));
         }
 
         return objectList;
