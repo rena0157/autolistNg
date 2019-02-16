@@ -24,3 +24,11 @@ body {
     border-radius: 10px;
     font-family: 'Roboto Mono', monospace;
 }
+
+.al-textarea:focus {
+    border: 1px solid blue;
+    box-shadow: 1px 1px 2px 2px #888888;
+}
+
+// Removing the outline from these objects
+textarea, select, input, button {outline: none};
