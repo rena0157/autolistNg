@@ -1,6 +1,33 @@
 <div id="home-container">
     <div style="grid-area: message;">
-        <h2>Autolist</h2>
+        <h2>AutoList</h2>
+        <h3>Introduction</h3>
+        <p>
+            AutoList is a program that extracts information from AutoCAD <code>LIST</code> command output. Currently this can be used with
+            <code>TEXT</code>, <code>MTEXT</code>, <code>LINE</code>, <code>LWPOLYLINE</code> and <code>HATCH</code>. This tool can be used to calculate the total length/area of lines and
+            hatches or download all of the lengths/areas of many different hatchs/lines/arcs and so on.
+        </p>
+
+        <h3>How to</h3>
+        <p>
+            Within AutoCAD first enter the <code>LIST</code> command, then select the objects that you would like to see information about. Then
+            just paste the whole output of the <code>LIST</code> command into the text bow below.
+        </p>
+
+        <h4>More than one object</h4>
+        <p>
+            When you would like to download a CSV of these objects select the objects in the following order (<code>TEXT</code>,
+            <code>LINE</code>/<code>LWPOLYLINE</code>/<code>HATCH</code>/<code>ARC</code>, <code>TEXT</code>, <code>LINE</code>/<code>LWPOLYLINE</code>/<code>HATCH</code>/<code>ARC</code>, ...).
+            The text object will be used as the object's ID. The other objects are not required. Note that if selecting more than one <code>LINE</code>/<code>LWPOLYLINE</code> between <code>TEXT</code>s the
+            lengths will be added together to give a total length. The same goes for <code>HATCH</code>s but for their areas.
+        </p>
+
+        <h3>Bug and Issues</h3>
+        <p>
+            For bugs and issues you can either post an issue on <a href="https://github.com/rena0157/AutoList-Web">GitHub</a> or just
+            send me a message on GitHub.
+        </p>
+
     </div>
     <!-- The input area -->
     <app-autolist-textarea (inputEvent)="onInput($event)" style="grid-area: input;"></app-autolist-textarea>
