@@ -1,3 +1,24 @@
-<p>
-  object-table works!
-</p>
+<!-- Object table component -->
+<!-- By Adam Renaud -->
+<!-- Created: 2019-02-17 -->
+<table>
+    <thead>
+        <tr>
+            <th>Object ID</th>
+            <th>Length (m)</th>
+            <th>Area (m²)</th>
+            <th>Area (Ha)</th>
+            <th>Area (Ac)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let o of objectArray">
+            <td>{{o.ID}}</td>
+            <td>{{o.Length}}</td>
+            <td>{{o.AreaM}}</td>
+            <td>{{o.AreaHa}}</td>
+            <td>{{o.AreaAc}}</td>
+
+        </tr>
+    </tbody>
+</table>

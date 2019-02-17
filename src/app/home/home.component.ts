@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AutolistParser } from '../autolist/AutolistParser';
+import { AcadObject } from '../autolist/AcadObject';
 
 @Component({
     selector: 'app-home',
@@ -17,6 +18,8 @@ export class HomeComponent implements OnInit {
         this.parser = new AutolistParser();
         this.totalArea = "";
         this.totalLength = "";
+        this.objectsArray = new Array<AcadObject>();
+        this.showTable = false;
     }
 
     /**
@@ -40,6 +43,16 @@ export class HomeComponent implements OnInit {
      * The total area of all the hatches
      */
     public totalArea: string;
+
+    /**
+     * The Objects Array
+     */
+    public objectsArray: AcadObject[];
+
+    /**
+     * Shows the table if true
+     */
+    public showTable:boolean;
 
     /**
      * The total Area placeholder text
@@ -79,7 +92,12 @@ export class HomeComponent implements OnInit {
         else this.totalArea = "";
 
         if (objects.length > 0 ) {
-            console.log(objects);
+            this.objectsArray = objects;
+            this.showTable = true;
+        }
+        else {
+            this.objectsArray = null;
+            this.showTable = false;
         }
     }
 

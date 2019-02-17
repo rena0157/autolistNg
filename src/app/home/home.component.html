@@ -12,4 +12,6 @@
     <!-- Total Area output cell -->
     <app-output-cell [value]="totalArea" [placeholder]="totalAreaPlaceholder" style="grid-area: area;">
     </app-output-cell>
+
+    <app-object-table [objectArray]="objectsArray" *ngIf="showTable" style="grid-area: table;"></app-object-table>
 </div>
