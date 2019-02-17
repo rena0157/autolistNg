@@ -14,11 +14,10 @@
     <tbody>
         <tr *ngFor="let o of objectArray">
             <td>{{o.ID}}</td>
-            <td>{{o.Length}}</td>
-            <td>{{o.AreaM}}</td>
-            <td>{{o.AreaHa}}</td>
-            <td>{{o.AreaAc}}</td>
-
+            <td>{{o.Length | number}}</td>
+            <td>{{o.AreaM | number}}</td>
+            <td>{{o.AreaHa | number}}</td>
+            <td>{{o.AreaAc | number}}</td>
         </tr>
     </tbody>
 </table>
