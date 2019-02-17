@@ -18,8 +18,8 @@ export class AutolistParser {
      * Get the double from the List text
      */
     getDoubles(text: string, re: RegExp): number[] {
-        var match: RegExpExecArray;
-        var matches: number[] = new Array<number>();
+        let match: RegExpExecArray;
+        const matches: number[] = new Array<number>();
         while (match = re.exec(text) as RegExpExecArray) {
             matches.push(parseFloat(match[1]));
         }
@@ -29,9 +29,9 @@ export class AutolistParser {
     /**
      * Get the strings from the list text
      */
-    getString(text: string, re: RegExp, groupNum:number): string[] {
-        var match: RegExpExecArray;
-        var matches: string[] = new Array<string>();
+    getString(text: string, re: RegExp, groupNum: number): string[] {
+        let match: RegExpExecArray;
+        const matches: string[] = new Array<string>();
 
         while (match = re.exec(text) as RegExpExecArray) {
             matches.push(match[groupNum]);
@@ -44,50 +44,52 @@ export class AutolistParser {
      * Get the objects from the list text
      */
     getObjects(text: string): AcadObject[] {
-        var objectList = new Array<AcadObject>();
+        const objectList = new Array<AcadObject>();
 
-        var textObjects = this.getString(text, this.textRegex, 2);
-        var lengthObjects = this.getDoubles(text, this.linesRegex);
-        var areaObjects = this.getDoubles(text, this.hatchesRegex);
+        const textObjects = this.getString(text, this.textRegex, 2);
+        const lengthObjects = this.getDoubles(text, this.linesRegex);
+        const areaObjects = this.getDoubles(text, this.hatchesRegex);
 
-        const objectNames:RegExp =  /(LINE|LWPOLYLINE|HATCH|TEXT|MTEXT|ARC)/g;
+        const objectNames: RegExp = /(LINE|LWPOLYLINE|HATCH|TEXT|MTEXT|ARC)/g;
         const textMatch = 'TEXT';
-        const mTextMatch = "MTEXT";
-        const lineMatch = "LINE";
-        const arcMatch = "ARC";
-        const lwPolyLineMatch = "LWPOLYLINE";
-        const hatchMatch = "HATCH";
+        const mTextMatch = 'MTEXT';
+        const lineMatch = 'LINE';
+        const arcMatch = 'ARC';
+        const lwPolyLineMatch = 'LWPOLYLINE';
+        const hatchMatch = 'HATCH';
 
         // The list of matches
-        var matches:string[] = this.getString(text, objectNames, 0);
+        const matches: string[] = this.getString(text, objectNames, 0);
 
         // Indexes
-        var textIndex = 0;
-        var lengthIndex = 0;
-        var areaIndex = 0;
+        let textIndex = 0;
+        let lengthIndex = 0;
+        let areaIndex = 0;
 
-        var currentText = null;
-        var currentLength:number = 0.0;
-        var currentArea:number = 0.0;
+        let currentText = null;
+        let currentLength = 0.0;
+        let currentArea = 0.0;
 
-        for(var matchIndex = 0; matchIndex < matches.length; ++matchIndex) {
-            var currentMatch = matches[matchIndex];
+        for (let matchIndex = 0; matchIndex < matches.length; ++matchIndex) {
+            const currentMatch = matches[matchIndex];
 
-            if (textIndex < textObjects.length && currentText == null && (currentMatch == textMatch || currentMatch == mTextMatch)) {
+            if (textIndex < textObjects.length && currentText == null && (currentMatch === textMatch || currentMatch === mTextMatch)) {
                 currentText = textObjects[textIndex++];
 
                 // TODO: Add MTEXT Additional Parsing
-            }
 
-            else if (lengthIndex < lengthObjects.length && (currentMatch == lwPolyLineMatch || currentMatch == lineMatch || currentMatch == arcMatch)) {
+            // Length objects
+            } else if (lengthIndex < lengthObjects.length &&
+                (currentMatch === lwPolyLineMatch || currentMatch === lineMatch || currentMatch === arcMatch)) {
                 currentLength += lengthObjects[lengthIndex++];
-            }
 
-            else if (areaIndex < areaObjects.length && (currentMatch == hatchMatch)) {
+            // Area objects
+            } else if (areaIndex < areaObjects.length && (currentMatch === hatchMatch)) {
                 currentArea += areaObjects[areaIndex++];
-            }
 
-            else if (textIndex < textObjects.length && currentText != null && (currentMatch == textMatch || currentMatch == mTextMatch)) {
+            // Text objects
+            } else if (textIndex < textObjects.length &&
+                currentText != null && (currentMatch === textMatch || currentMatch === mTextMatch)) {
                 // TODO: Add MText Parsing
 
                 objectList.push(new AcadObject(currentText, currentLength, currentArea));
