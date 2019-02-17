@@ -3,7 +3,7 @@
         <h2>Autolist</h2>
     </div>
     <!-- The input area -->
-    <autolist-textarea (inputEvent)="onInput($event)" style="grid-area: input;"></autolist-textarea>
+    <app-autolist-textarea (inputEvent)="onInput($event)" style="grid-area: input;"></app-autolist-textarea>
 
     <!-- total length output cell -->
     <app-output-cell [value]="totalLength" [placeholder]="totalLengthPlaceholder" style="grid-area: length;">

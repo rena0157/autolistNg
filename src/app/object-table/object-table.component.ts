@@ -23,13 +23,13 @@ export class ObjectTableComponent implements OnInit {
     }
 
     /**
+     * The input object array
+     */
+    @Input() objectArray: Array<AcadObject>;
+
+    /**
      * On Init Life cycle hook
      */
     ngOnInit() {
     }
-
-    /**
-     * The input object array
-     */
-    @Input() objectArray:Array<AcadObject>;
 }

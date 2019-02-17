@@ -1,14 +1,13 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
-    selector: 'autolist-textarea',
+    selector: 'app-autolist-textarea',
     templateUrl: './autolist-textarea.component.html',
     styleUrls: ['./autolist-textarea.component.scss']
 })
 export class AutolistTextareaComponent implements OnInit {
 
-    constructor() 
-    {
+    constructor() {
     }
 
     /**
@@ -23,8 +22,7 @@ export class AutolistTextareaComponent implements OnInit {
     /**
      * @param text The string from the input area
      */
-    onInput(text: string)
-    {
+    onInput(text: string) {
         this.inputEvent.emit(text);
     }
 

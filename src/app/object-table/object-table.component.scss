@@ -1,3 +1,7 @@
+
+// The color of the header
+$header-color: #e1edff;
+
 table {
     margin-top: 1em;
     width: 100%;
@@ -9,7 +13,7 @@ table {
 }
 /* Styling for the block table headers */
 table th {
-    background-color: #e1edff;
+    background-color: $header-color;
     font-weight: normal;
     line-height: 2em;
 }
