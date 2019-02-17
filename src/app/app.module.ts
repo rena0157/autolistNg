@@ -8,6 +8,7 @@ import { NavComponent } from './nav/nav.component';
 import { AutolistTextareaComponent } from './autolist-textarea/autolist-textarea.component';
 import { OutputCellComponent } from './output-cell/output-cell.component';
 import { ObjectTableComponent } from './object-table/object-table.component';
+import { AutolistService } from './autolist.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { ObjectTableComponent } from './object-table/object-table.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

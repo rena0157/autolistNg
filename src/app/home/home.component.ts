@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AutolistParser } from '../autolist/AutolistParser';
 import { AcadObject } from '../autolist/AcadObject';
+import { AutolistService } from '../autolist.service';
 
 @Component({
     selector: 'app-home',
@@ -12,15 +12,15 @@ export class HomeComponent implements OnInit {
     /**
      * The Constructor
      */
-    constructor() {
-        this.parser = new AutolistParser();
+    constructor(parser: AutolistService) {
+        this.parser = parser;
         this.totalArea = '';
         this.totalLength = '';
         this.objectsArray = new Array<AcadObject>();
         this.showTable = false;
     }
 
-    private parser: AutolistParser;
+    private parser: AutolistService;
 
     /**
      * The total length of all lines
