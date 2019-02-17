@@ -40,5 +40,7 @@
     <app-output-cell [value]="totalArea" [placeholder]="totalAreaPlaceholder" style="grid-area: area;">
     </app-output-cell>
 
+    <app-download-button (clicked)="downloadCSV();" *ngIf="showTable" style="grid-area: objectBtn"></app-download-button>
+
     <app-object-table [objectArray]="objectsArray" *ngIf="showTable" style="grid-area: table;"></app-object-table>
 </div>

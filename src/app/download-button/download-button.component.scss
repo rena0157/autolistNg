@@ -1,0 +1,18 @@
+
+button {
+    background-color: #f0f0f0;
+    border: 1px solid lightgray;
+    box-sizing: border-box;
+    height: 2em;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    border-radius: 10px;
+}
+
+button:active {
+    background: #006aff;
+    color: white;
+    border: 1px solid blue;
+    box-shadow: 1px 1px 2px 2px #888888;
+}

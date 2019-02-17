@@ -66,6 +66,27 @@ export class HomeComponent implements OnInit {
      */
     public sumArray = (a: number, b: number): number => a + b;
 
+    /**
+     * Download the Block data into the csv
+     */
+    downloadCSV() {
+        // Create a link element
+        const element = document.createElement('a');
+        element.setAttribute('href', 'data:text/csv;charset=utf-8,' + encodeURIComponent(this.arrayToCSV(this.objectsArray)));
+        element.setAttribute('download', 'Objects.csv');
+
+        // Make sure that it is hidden
+        element.style.display = 'none';
+
+        // Append it to the dom
+        document.body.appendChild(element);
+
+        // Click to init the download
+        element.click();
+
+        // Clean up after we are done
+        document.body.removeChild(element);
+    }
 
     /**
      * @param text The text that is passed to the event
@@ -96,6 +117,15 @@ export class HomeComponent implements OnInit {
             // this.objectsArray = null;
             this.showTable = false;
         }
+    }
+
+    arrayToCSV(a: Array<AcadObject>) {
+        let returnString = 'Object ID,Length,Area(m2),Area(Ha),Area(Ac)\n';
+
+        this.objectsArray.forEach((o: AcadObject) => {
+            returnString = returnString.concat(`${o.ID},${o.Length},${o.AreaM},${o.AreaHa},${o.AreaAc}\n`);
+        });
+        return returnString;
     }
 
 }

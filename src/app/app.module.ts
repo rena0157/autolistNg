@@ -9,6 +9,7 @@ import { AutolistTextareaComponent } from './autolist-textarea/autolist-textarea
 import { OutputCellComponent } from './output-cell/output-cell.component';
 import { ObjectTableComponent } from './object-table/object-table.component';
 import { AutolistService } from './autolist.service';
+import { DownloadButtonComponent } from './download-button/download-button.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { AutolistService } from './autolist.service';
     AutolistTextareaComponent,
     OutputCellComponent,
     ObjectTableComponent,
+    DownloadButtonComponent,
   ],
   imports: [
     BrowserModule,
