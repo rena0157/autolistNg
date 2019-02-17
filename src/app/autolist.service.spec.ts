@@ -10,9 +10,15 @@ describe('AutolistService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should return 200.2', () => {
+  it('should return a number from a length', () => {
       const service: AutolistService = TestBed.get(AutolistService);
       const testString = 'length 200.2';
       expect(service.getDoubles(testString, service.linesRegex)).toBeCloseTo(200.2);
-  })
+  });
+
+  it('should return a number from an area', () => {
+      const service: AutolistService = TestBed.get(AutolistService);
+      const testString = 'Area 200.2';
+      expect(service.getDoubles(testString, service.hatchesRegex)).toBeCloseTo(200.2);
+  });
 });
